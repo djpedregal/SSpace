@@ -5,3 +5,12 @@ Any potential user that gives it a try would soon realize that it is very easy t
 
 [Here](http://blog.uclm.es/diegopedregal/files/2019/05/SSpaceTutorial.pdf) you have also a tutorial.
 
+## Updates:
+There are two main changes to the use of SSpace:
+
+1. Now input 'y' is compulsory, then there is no need to set 'y' every time you set up a model. Example:
+   Before:     m = SSmodel('y', y, 'u', u, 'model', @model);
+   Now:        m = SSmodel(y, 'u', u, 'model', @model);
+   
+2. Function SS create that runs SSmodel, SSestim, SSvalidate and SSsmooth sequentially, this saves a lot of tedious repetitive calls to these functions.
+
