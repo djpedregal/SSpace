@@ -8,11 +8,11 @@ Any potential user that gives it a try would soon realize that it is very easy t
 ## Updates:
 Here are the main changes to SSpace:
 
-1. Now input 'y' is compulsory, then there is no need to set 'y' every time you set up a model. Example:
+1. Now inputs 'y' and 'model' are compulsory, then there is no need to set 'y' and 'model' every time you set up a model. Example:
 
-   Before:     `m = SSmodel('y', y, 'u', u, 'model', @model);`
+   Before:     `m = SSmodel('y', y, 'model', @model, 'u', u);`
    
-      Now:     `m = SSmodel(y, 'u', u, 'model', @model);`
+      Now:     `m = SSmodel(y, @model, 'u', u);`
 2. New **SS** function runs SSmodel, SSestim, SSvalidate and SSsmooth sequentially with the same syntax than SSmodel. This saves a lot of tedious repetitive calls to these functions.
 3. New model and template: **SampleSH.m** for seasonal heteroskedasticity. This is an implementation of BSM with dummy seasonality with the possibility of selecting different variances for each seasonal factor (see Proietti, T, 1998, Seasonal Heteroscedasticity and Trends, Journal of Forecasting, VOL. 17, 1-17.
 4. New model and template: **SampleDHRt.m** for DHR modelling with time varying periods, compulsory with rapidly sampled data. It is used in companion to dhrMatrix.m function.
